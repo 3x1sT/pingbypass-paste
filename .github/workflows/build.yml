@@ -30,8 +30,21 @@ jobs:
       - name: Build jars
         run: ./gradlew build
         
-      - name: Upload artifact
+      - name: Upload pb-client
         uses: actions/upload-artifact@v3
         with:
           name: pb-client
-          path: ./build/libs
+          path: ./pb-client/build/libs
+
+      - name: Upload pb-api
+        uses: actions/upload-artifact@v3
+        with:
+          name: pb-api
+          path: ./pb-api/build/libs
+          
+      - name: Upload pb-server
+        uses: actions/upload-artifact@v3
+        with:
+          name: pb-server
+          path: ./pb-server/build/libs
+        
